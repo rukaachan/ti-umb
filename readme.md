@@ -28,6 +28,8 @@ Kumpulan materi perkuliahan Pemrograman Lanjut, Pemrograman Website, dan Struktu
 
 ---
 
-Materi ini dikumpulkan untuk membantu proses pembelajaran di Universitas Mercu Buana. Harap gunakan sebagai referensi pendukung.
+---
+
+Kumpulan materi ini merupakan rangkuman dari pembahasan sebelumnya untuk mendukung pembelajaran di Universitas Mercu Buana. Semoga bermanfaat untuk dipelajari kembali.
 
 Semangat belajar! 💪
