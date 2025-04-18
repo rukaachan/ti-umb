@@ -8,11 +8,11 @@ Kumpulan materi perkuliahan Pemrograman Lanjut, Pemrograman Website, dan Struktu
 
 ## 📂 Materi Tersedia
 
-- [💻 **Pemrograman Lanjut**](./Pemrograman-Lanjut/)
+- [💻 **Pemrograman Lanjut**](./proglan-umb/)
   - Mempelajari bahasa Python, konsep Object-Oriented Programming (OOP) dengan Python, dan penggunaan framework Beeware.
-- [🌐 **Pemrograman Website**](./Pemrograman-Website/)
+- [🌐 **Pemrograman Website**](./web-umb/)
   - Meliputi pengenalan struktur dasar web, elemen dasar (HTML/CSS), JavaScript (dasar, kontrol program, fungsi, event), PHP (struktur dasar, kontrol program, fungsi, objek), serta penggunaan framework PHP seperti Laravel/CodeIgniter.
-- [📊 **Struktur Data**](./Struktur-Data/)
+- [📊 **Struktur Data**](./ds-umb/)
   - Membahas konsep dan implementasi: Fungsi Rekursif, Array, String, Pointer, Record/Structure, Linkedlist, Stack, Queue, Algoritma Searching, Algoritma Sorting, dan Graph.
 
 ---
