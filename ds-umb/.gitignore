@@ -1,0 +1,16 @@
+.cache/
+.vscode/
+compile_commands.json
+
+# Common C++ build artifacts
+build/
+cmake-build-*/
+*.o
+*.a
+*.so
+*.exe
+*.out
+
+# Temporary files
+*.swp
+*~

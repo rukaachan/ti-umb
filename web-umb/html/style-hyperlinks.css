@@ -1,0 +1,46 @@
+body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.linkBasic {
+  font-size: 20pt;
+  text-decoration: none;
+}
+.linkBasic:link {
+  color: blue;
+}
+.linkBasic:visited {
+  color: purple;
+}
+.linkBasic:hover {
+  color: red;
+  text-decoration: underline;
+}
+.linkBasic:active {
+  color: orange;
+}
+
+.linkButton,
+.linkButton:link,
+.linkButton:visited,
+.linkButton:active {
+  font-size: 16pt;
+  background: #1abc9c;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-family: sans-serif;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.linkButton:hover {
+  background: #16a085;
+  color: #fff;
+}

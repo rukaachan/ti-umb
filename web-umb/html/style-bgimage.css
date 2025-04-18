@@ -1,0 +1,19 @@
+body {
+  background-image: url("https://upload.wikimedia.org/wikipedia/id/1/1d/Logo_umc.gif");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  color: #fff;
+  font-family: sans-serif;
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  padding: 10px 20px;
+}

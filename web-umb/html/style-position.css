@@ -1,0 +1,61 @@
+body {
+  font-family: sans-serif;
+}
+.container {
+  width: 80%;
+  margin: 20px auto;
+  border: 1px solid #aaa;
+  padding: 15px;
+}
+h1 {
+  text-align: center;
+}
+
+.box {
+  border: 2px solid black;
+  padding: 15px;
+  margin-bottom: 20px;
+  color: white;
+  min-height: 80px;
+}
+.box p {
+  font-size: 0.9em;
+  margin-top: 5px;
+  color: #eee;
+}
+
+.static {
+  position: static;
+  background: #555;
+}
+
+.relative {
+  position: relative;
+  left: 40px;
+  background: blue;
+}
+
+.absolute-parent {
+  position: relative;
+  background: green;
+  height: 180px;
+  padding-top: 40px;
+}
+.absolute {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: darkorange;
+  width: 60%;
+  border-color: #666;
+}
+
+.fixed {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  background: rebeccapurple;
+  width: 200px;
+  z-index: 10;
+  border-color: #303;
+}

@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Memasukkan Bilangan</title>
+  </head>
+  <body>
+    <p>
+      <script language="JavaScript">
+        function jumlah() {
+          var bill = parseFloat(document.fform.bilangan1.value);
+
+          if (isNaN(bill)) bill = 0.0;
+          var bil2 = parseFloat(document.fform.bilangan2.value);
+
+          if (isNaN(bil2)) bil2 = 0.0;
+
+          var hasil = bill + bil2;
+
+          alert("Hasil Penjumlahan = " + hasil);
+        }
+      </script>
+    </p>
+
+    <form name="fform">
+      <h1><br />Memasukkan Data Lewat Keyboard</h1>
+      <pre>
+        Bilangan Pertama : <input type="text" size="11" name="bilangan1">
+        Bilangan Kedua   : <input type="text" size="11" name="bilangan2">
+    </pre>
+      <p>
+        <input type="button" value="Jumlahkan" onclick="jumlah()" />
+        <input type="reset" value="Ulang" />
+      </p>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Belajar Membuat Form pada HTML</title>
+  </head>
+  <body>
+    <form action="#" method="get">
+      <label for="nama">Nama:</label>
+      <input type="text" id="nama" name="nama" /> <br /><br />
+
+      <label for="alamat">Alamat:</label>
+      <input type="text" id="alamat" name="alamat" /> <br /><br />
+
+      <label for="pass">Password:</label>
+      <input type="password" id="pass" name="pass" /> <br /><br />
+
+      <fieldset>
+        <legend>Jenis Kelamin:</legend>
+        <input type="radio" id="laki" name="jk" value="laki-laki" />
+        <label for="laki">Laki - Laki</label><br />
+        <input type="radio" id="perempuan" name="jk" value="perempuan" />
+        <label for="perempuan">Perempuan</label>
+      </fieldset>
+      <br />
+
+      <fieldset>
+        <legend>Bahas Pemograman yang Dikuasai:</legend>
+        <input type="checkbox" id="web" name="web" value="web" />
+        <label for="web">Web</label><br />
+        <input type="checkbox" id="mobile" name="mobile" value="mobile" />
+        <label for="mobile">MOBILE</label><br />
+        <input type="checkbox" id="desk" name="desk" value="desktop" />
+        <label for="desk">DESKTOP</label>
+      </fieldset>
+      <br />
+
+      <label for="kota">Kota Asal:</label>
+      <select id="kota" name="kota">
+        <option value="semarang">Semarang</option>
+        <option value="bandung">Bandung</option>
+        <option value="jakarta">Jakarta</option>
+      </select>
+      <br /><br />
+
+      <label for="pesan">Pesan Anda:</label><br />
+      <textarea id="pesan" name="pesan" rows="4" cols="50"></textarea>
+      <br /><br />
+
+      <input type="submit" value="Proses" />
+    </form>
+  </body>
+</html>

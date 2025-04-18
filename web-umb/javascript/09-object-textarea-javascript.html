@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Latihan Dengan Objek TextArea</title>
+  </head>
+  <body>
+    <script language="JavaScript">
+      function tekan() {
+        var ketstr = document.fform.Ket.value;
+        document.fform.Oket.value = ketstr;
+      }
+    </script>
+
+    <form name="fform">
+      <h1>Masukkan Data Dengan Objek TextArea</h1>
+      <hr />
+      <h3>Keterangan :</h3>
+      <br />
+      <textarea name="Ket" rows="3" cols="30"></textarea><br /><br />
+      <input type="button" value="Kirim" onclick="tekan()" />
+      <input type="reset" value="Ulangi" /><br />
+      <h3>Output Keterangan :</h3>
+      <textarea name="Oket" rows="3" cols="30"></textarea>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Menganal Position CSS</title>
+    <link rel="stylesheet" type="text/css" href="style-position.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>CSS Position Examples</h1>
+
+      <div class="box static">
+        Position: Static (Default)
+        <p>Follows normal document flow.</p>
+      </div>
+
+      <div class="box relative">
+        Position: Relative
+        <p>
+          Takes space in normal flow, but can be offset using
+          top/right/bottom/left (e.g., left: 40px).
+        </p>
+      </div>
+
+      <div class="box absolute-parent">
+        Parent for Absolute
+        <div class="box absolute">
+          Position: Absolute
+          <p>
+            Positioned relative to the nearest *positioned* ancestor (here,
+            `absolute-parent` which is relative). Removed from normal flow.
+          </p>
+        </div>
+        <p>Other content in parent.</p>
+      </div>
+
+      <div class="box fixed">
+        Position: Fixed
+        <p>
+          Positioned relative to the viewport. Stays in the same place even when
+          scrolling. Removed from normal flow.
+        </p>
+      </div>
+
+      <div style="height: 1200px; background: #eee; margin-top: 20px">
+        Scrollable Area
+      </div>
+    </div>
+  </body>
+</html>

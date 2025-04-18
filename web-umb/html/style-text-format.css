@@ -1,0 +1,40 @@
+body {
+  font-family: sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+p {
+  border: 1px dashed #ccc;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.style1 {
+  color: blue;
+  text-decoration: underline;
+}
+
+.style2 {
+  text-align: right;
+  text-transform: capitalize;
+  text-decoration: overline;
+}
+
+.style3 {
+  text-align: center;
+  text-transform: lowercase;
+  text-decoration: line-through;
+  word-spacing: 10px;
+}
+
+.style4 {
+  text-align: justify;
+  text-transform: uppercase;
+  text-indent: 30px;
+  line-height: 1.8;
+  letter-spacing: 2px;
+}
