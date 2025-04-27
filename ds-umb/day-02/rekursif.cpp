@@ -2,22 +2,19 @@
 
 using namespace std;
 
-// Fungsi Iterasi
-// Analoginya adalah dengan membuka seluruh kotak, pada waktu bersamaan (aksi)
+// Fungsi Iterasi terbatas
 int pangkatIterasi(int a, int b){
     int hasil = a;
     cout << "Hasil: " << hasil << endl;
 
     for (int i = 1; i < b; i++) {
-        cout << "For Hasil: " << hasil << endl;
-        cout << "For a: " << a << endl;
         hasil = hasil * a;
     }
     return hasil;
 }
 
 int pangkatRekrusif(int a, int b){
-    if (b == 1) {
+    if (b <= 1) {
         cout << "Akhir Batasan Rekrusif" << endl;
         return a;
     } else {
