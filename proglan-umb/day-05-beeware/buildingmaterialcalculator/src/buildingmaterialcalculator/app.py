@@ -1,6 +1,6 @@
 import toga
 from toga.style import Pack
-from toga.style.pack import COLUMN, ROW, CENTER, LEFT
+from toga.style.pack import COLUMN, ROW, LEFT
 
 # --- Material Database ---
 MATERIALS_DB = {
@@ -14,30 +14,32 @@ class BuildingMaterialCalculator(toga.App):
 
     def startup(self):
         """
-        Construct and show the Toga application.
+        Construct and show the Toga application using updated styling.
         """
         # --- UI Elements ---
-        main_box = toga.Box(style=Pack(direction=COLUMN, padding=20))
-        input_box = toga.Box(style=Pack(direction=COLUMN, padding_bottom=20))
-        # Box to hold all results elements (labels)
-        results_outer_box = toga.Box(style=Pack(direction=COLUMN, padding_top=10))
+        # Use margin instead of padding for outer spacing
+        main_box = toga.Box(style=Pack(direction=COLUMN, margin=20))
+        input_box = toga.Box(style=Pack(direction=COLUMN, margin_bottom=20)) # Use margin_bottom
+        # Use margin_top for spacing; flex=1 allows this section to grow if needed
+        results_outer_box = toga.Box(style=Pack(direction=COLUMN, margin_top=10))
 
         # --- Input Fields ---
-        length_label = toga.Label("📏 Building Length (m):", style=Pack(text_align=LEFT, width=170, padding_right=50)) # Increased width for emoji
+        # Use margin_right instead of padding_right
+        length_label = toga.Label("📏 Building Length (m):", style=Pack(text_align=LEFT, width=170, margin_right=50))
         self.length_input = toga.TextInput(placeholder="e.g., 10", style=Pack(flex=1))
-        length_box = toga.Box(style=Pack(direction=ROW, padding_bottom=10))
+        length_box = toga.Box(style=Pack(direction=ROW, margin_bottom=10)) # Use margin_bottom
         length_box.add(length_label)
         length_box.add(self.length_input)
 
-        width_label = toga.Label("📏 Building Width (m):", style=Pack(text_align=LEFT, width=170, padding_right=50)) # Increased width for emoji
+        width_label = toga.Label("📏 Building Width (m):", style=Pack(text_align=LEFT, width=170, margin_right=50)) # Use margin_right
         self.width_input = toga.TextInput(placeholder="e.g., 8", style=Pack(flex=1))
-        width_box = toga.Box(style=Pack(direction=ROW, padding_bottom=10))
+        width_box = toga.Box(style=Pack(direction=ROW, margin_bottom=10)) # Use margin_bottom
         width_box.add(width_label)
         width_box.add(self.width_input)
 
-        height_label = toga.Label("📏 Building Height (m):", style=Pack(text_align=LEFT, width=170, padding_right=50)) # Increased width for emoji
+        height_label = toga.Label("📏 Building Height (m):", style=Pack(text_align=LEFT, width=170, margin_right=50)) # Use margin_right
         self.height_input = toga.TextInput(placeholder="e.g., 3", style=Pack(flex=1))
-        height_box = toga.Box(style=Pack(direction=ROW, padding_bottom=10))
+        height_box = toga.Box(style=Pack(direction=ROW, margin_bottom=10)) # Use margin_bottom
         height_box.add(height_label)
         height_box.add(self.height_input)
 
@@ -49,32 +51,36 @@ class BuildingMaterialCalculator(toga.App):
         button_calculate = toga.Button(
             "🧮 Calculate Materials",
             on_press=self.calculate_materials,
-            style=Pack(padding=5, flex=1)
+            style=Pack(margin=5, flex=1) # Use margin
         )
         button_reset = toga.Button(
             "🔄 Reset",
             on_press=self.reset_fields,
-            style=Pack(padding=5, flex=1)
+            style=Pack(margin=5, flex=1) # Use margin
         )
-        button_box = toga.Box(style=Pack(direction=ROW, alignment=CENTER, padding_bottom=20))
+        # Use align_items='center' instead of alignment=CENTER; use margin_bottom
+        button_box = toga.Box(style=Pack(direction=ROW, align_items='center', margin_bottom=20))
         button_box.add(button_calculate)
         button_box.add(button_reset)
 
         # --- Results Display Area (Using Labels) ---
         self.results_title_label = toga.Label(
             "📊 Calculation Results:",
-            style=Pack(font_weight='bold', padding_bottom=5, text_align=LEFT)
+            # Use margin_bottom
+            style=Pack(font_weight='bold', margin_bottom=5, text_align=LEFT)
         )
         self.summary_header_label = toga.Label(
             "", # Start empty
-            style=Pack(padding_top=5, padding_bottom=5, text_align=LEFT) # Adjusted padding
+            # Use margin_top and margin_bottom
+            style=Pack(margin_top=5, margin_bottom=5, text_align=LEFT)
         )
         # Labels for each section of the results
-        self.input_dims_details_label = toga.Label("", style=Pack(text_align=LEFT, padding_bottom=10))
-        self.calc_areas_details_label = toga.Label("", style=Pack(text_align=LEFT, padding_bottom=10))
-        self.material_reqs_details_label = toga.Label("", style=Pack(text_align=LEFT))
+        # Use margin_bottom
+        self.input_dims_details_label = toga.Label("", style=Pack(text_align=LEFT, margin_bottom=10))
+        self.calc_areas_details_label = toga.Label("", style=Pack(text_align=LEFT, margin_bottom=10)) # Use margin_bottom
+        self.material_reqs_details_label = toga.Label("", style=Pack(text_align=LEFT)) # No margin/padding needed here before
         # Label for displaying calculation errors or status
-        self.status_label = toga.Label("", style=Pack(text_align=LEFT, color='red', padding_top=10))
+        self.status_label = toga.Label("", style=Pack(text_align=LEFT, color='red', margin_top=10)) # Use margin_top
 
 
         # Add elements to the results_outer_box
@@ -93,7 +99,7 @@ class BuildingMaterialCalculator(toga.App):
 
 
         # --- Main Window Setup ---
-        self.main_window = toga.MainWindow(title="🏗️ Building Material Calculator") # Added emoji to title
+        self.main_window = toga.MainWindow(title="🏗️ Building Material Calculator")
         self.main_window.content = main_box
         self.main_window.show()
 
