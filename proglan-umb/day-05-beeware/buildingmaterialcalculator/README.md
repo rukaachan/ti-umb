@@ -128,4 +128,4 @@ The calculations are based on the following inputs and formulas:
 
 ## 📜 License
 
-This project is licensed under the BSD License - see the LICENSE.txt file for details.
+This project is licensed under the BSD License - see the LICENSE file for details.
