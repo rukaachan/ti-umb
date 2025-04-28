@@ -86,7 +86,7 @@ class SocialEnergyCalculator(toga.App):
         duration_row = Box(style=Pack(direction=ROW, padding_bottom=PADDING_MEDIUM, alignment=CENTER))
         duration_label = Label("⏰ Duration:", style=Pack(padding_right=PADDING_SMALL, text_align=RIGHT, color=COLOR_TEXT_PRIMARY))
         self.duration_input = TextInput(placeholder='e.g., 1.5 or 2,5', style=Pack(flex=1))
-        self.duration_input.value = '' # Set initial value after creation
+        self.duration_input.value = '1.0' # Set initial value after creation
         duration_row.add(duration_label)
         duration_row.add(self.duration_input)
 
@@ -210,7 +210,7 @@ class SocialEnergyCalculator(toga.App):
             self.all_activities.append(new_activity)
             self.save_data()
             self.update_display()
-            self.duration_input.value = ''
+            self.duration_input.value = '1.0'
             # --- Clear Note Input ---
             self.note_input.value = ''
             # --- End Clear Note Input ---
@@ -348,7 +348,6 @@ class SocialEnergyCalculator(toga.App):
             print("No data file found. Starting with default state."); self._reset_state()
 
     def _reset_state(self):
-        
         self.current_balance = BASE_ENERGY
         self.all_activities = []
 
