@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Activity Recommender ✨</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+      :root {
+        --bg-color: #f4f6f8;
+        --text-color: #34495e;
+        --accent-color: #5d6d7e;
+        --card-bg: #ffffff;
+        --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        --button-text-color: #ffffff;
+      }
+
+      body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        transition: background-color 0.6s ease, color 0.6s ease;
+      }
+
+      .container {
+        background-color: var(--card-bg);
+        padding: 40px 50px;
+        border-radius: 20px;
+        box-shadow: var(--card-shadow);
+        text-align: center;
+        max-width: 500px;
+        width: 90%;
+        transition: box-shadow 0.3s ease;
+      }
+
+      .container:hover {
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+      }
+
+      h1 {
+        font-size: 2.3em;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: var(--accent-color);
+        transition: color 0.6s ease;
+      }
+
+      h1 .emoji-title {
+        margin-right: 10px;
+      }
+
+      p {
+        font-size: 1.1em;
+        line-height: 1.7;
+        margin-bottom: 30px;
+      }
+
+      .controls {
+        margin-bottom: 30px;
+      }
+
+      .controls label {
+        font-weight: 400;
+        font-size: 1.1em;
+        margin-right: 15px;
+        color: var(--text-color);
+      }
+
+      select {
+        padding: 12px 18px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1em;
+        border: 1px solid #dde2e7;
+        border-radius: 10px;
+        background-color: #fdfefe;
+        color: var(--text-color);
+
+        appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235D6D7E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 15px center;
+        background-size: 1em;
+        cursor: pointer;
+      }
+
+      select:focus {
+        outline: none;
+        border-color: var(--accent-color);
+        box-shadow: 0 0 0 3px
+          rgba(var(--accent-rgb, 93, 109, 126), 0.2);
+      }
+
+      .recommendation-box {
+        margin-top: 25px;
+        padding: 25px;
+        border-radius: 12px;
+        background-color: var(--accent-color);
+        color: var(--button-text-color);
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.6s ease, color 0.6s ease;
+      }
+
+      #recommendation-text {
+        font-size: 1.2em;
+        font-weight: 400;
+      }
+
+      body.low-energy select:focus {
+        box-shadow: 0 0 0 3px rgba(169, 204, 227, 0.3);
+      }
+      body.low-energy select {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A9CCE3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      }
+
+      body.medium-energy select:focus {
+        box-shadow: 0 0 0 3px rgba(125, 206, 160, 0.3);
+      }
+      body.medium-energy select {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237DCEA0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      }
+
+      body.high-energy select:focus {
+        box-shadow: 0 0 0 3px rgba(248, 196, 113, 0.3);
+      }
+      body.high-energy select {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F8C471' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="main-title">
+        <span class="emoji-title">🤔</span>What's Your Vibe?
+      </h1>
+      <p>
+        Select your current energy level, and we'll suggest something
+        fun to do!
+      </p>
+
+      <div class="controls">
+        <label for="energy-level">My Energy Level:</label>
+        <select id="energy-level">
+          <option value="">-- Select --</option>
+          <option value="low">😴 Low Energy</option>
+          <option value="medium">🚶‍♀️ Medium Energy</option>
+          <option value="high">⚡️ High Energy</option>
+        </select>
+      </div>
+
+      <div class="recommendation-box">
+        <span id="recommendation-text"
+          >Your suggestion will appear here... 🤔</span
+        >
+      </div>
+    </div>
+
+    <script>
+      const energyLevelSelect =
+        document.getElementById('energy-level');
+      const recommendationText = document.getElementById(
+        'recommendation-text'
+      );
+      const mainTitleElement = document.getElementById('main-title');
+      const bodyElement = document.body;
+      const root = document.documentElement;
+
+      const suggestions = {
+        low: [
+          '📖 Read a chapter of a good book.',
+          '🎧 Listen to a calming playlist or podcast.',
+          '🧘 Try a short guided meditation.',
+          '🎬 Watch a comfort movie or TV show.',
+          '☕ Sip a warm cup of tea and just relax.',
+        ],
+        medium: [
+          '🚶Go for a refreshing walk outside.',
+          '🧠 Learn something new for 15-30 minutes (e.g., Music).',
+          '🧹 Do a quick tidy-up of your space.',
+          '💬 Call or text a friend to catch up.',
+          '🗺️ Plan your next small adventure or project.',
+        ],
+        high: [
+          '💪 Do a home workout or go for a run.',
+          "🚀 Tackle a task you've been putting off.",
+          '🎨 Engage in a creative hobby (paint, write, music).',
+          '🎉 Socialize! Meet up with friends or family.',
+          "💡 Start that new project you're excited about.",
+        ],
+      };
+
+      const titleEmojis = {
+        default: '🤔',
+        low: '😴',
+        medium: '🚶‍♀️', // or 🤔 or 😊
+        high: '⚡️',
+      };
+
+      function updateRecommendation() {
+        const selectedLevel = energyLevelSelect.value;
+        let activity = 'Please select an energy level. 🤔';
+        let bgColor = '#f4f6f8';
+        let accentColor = '#5D6D7E';
+        let accentRgb = '93, 109, 126';
+        let bodyClass = '';
+        let titleEmoji = titleEmojis.default;
+
+        if (selectedLevel === 'low') {
+          const lowActivities = suggestions.low;
+          activity =
+            lowActivities[
+              Math.floor(Math.random() * lowActivities.length)
+            ];
+          bgColor = '#F0F4F8';
+          accentColor = '#A9CCE3';
+          accentRgb = '169, 204, 227';
+          bodyClass = 'low-energy';
+          titleEmoji = titleEmojis.low;
+        } else if (selectedLevel === 'medium') {
+          const mediumActivities = suggestions.medium;
+          activity =
+            mediumActivities[
+              Math.floor(Math.random() * mediumActivities.length)
+            ];
+          bgColor = '#E9F7EF';
+          accentColor = '#7DCEA0';
+          accentRgb = '125, 206, 160';
+          bodyClass = 'medium-energy';
+          titleEmoji = titleEmojis.medium;
+        } else if (selectedLevel === 'high') {
+          const highActivities = suggestions.high;
+          activity =
+            highActivities[
+              Math.floor(Math.random() * highActivities.length)
+            ];
+          bgColor = '#FEF9E7';
+          accentColor = '#F8C471';
+          accentRgb = '248, 196, 113';
+          bodyClass = 'high-energy';
+          titleEmoji = titleEmojis.high;
+        }
+
+        recommendationText.textContent = activity;
+        mainTitleElement.innerHTML = `<span class="emoji-title">${titleEmoji}</span>What's Your Vibe?`;
+
+        root.style.setProperty('--bg-color', bgColor);
+        root.style.setProperty('--accent-color', accentColor);
+        root.style.setProperty('--accent-rgb', accentRgb);
+
+        bodyElement.className = bodyClass;
+      }
+
+      energyLevelSelect.addEventListener(
+        'change',
+        updateRecommendation
+      );
+    </script>
+  </body>
+</html>

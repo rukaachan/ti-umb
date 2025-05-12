@@ -1,0 +1,659 @@
+/*
+  MiraiWorks Theme - Earthy Zen Palette
+  Inspired by Sided Template
+  Original Template: https://templatemo.com/tm-527-sided
+*/
+
+/*
+  MiraiWorks Theme – Zen Watercolor Palette
+  Inspired by Sided Template
+  Original Template: https://templatemo.com/tm-527-sided
+*/
+
+:root {
+  /* Zen Watercolor Palette */
+  --mist-white-bg: #ecebe8;
+  --mist-white-bg-rgb: 236, 235, 232;
+
+  --watercolor-gray-overlay: #d1d0cc;
+  --watercolor-gray-overlay-rgb: 209, 208, 204;
+
+  --mountain-mist-green: #9eb19a;
+  --mountain-mist-green-rgb: 158, 177, 154;
+
+  --bamboo-teal-accent: #346060;
+  --bamboo-teal-accent-rgb: 52, 96, 96;
+
+  --torii-red-action: #c72f3a;
+  --torii-red-action-rgb: 199, 47, 58;
+  --torii-red-action-darker: #a92730; /* For hover */
+
+  --gate-charcoal-text: #2c2a28;
+  --gate-charcoal-text-rgb: 44, 42, 40; /* Added for shadows & rgba() */
+
+  /* Text & Border specific */
+  --text-on-dark-bg: var(--mist-white-bg);
+  --text-on-light-bg: var(--gate-charcoal-text);
+  --border-subtle: var(--watercolor-gray-overlay);
+
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Noto Sans JP', sans-serif;
+}
+
+html,
+body {
+  overflow-x: hidden; /* Prevents horizontal scrollbars on the main page */
+}
+
+html {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  color: var(--text-on-light-bg);
+  background-color: var(
+    --mist-white-bg
+  ); /* Default page background */
+}
+
+a,
+button {
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.tm-bg-white-alpha {
+  /* Used for contact left section on desktop */
+  background-color: rgba(var(--mist-white-bg-rgb), 0.9);
+}
+
+.tm-bg-black-alpha {
+  /* Overlay on images, and section 4 left text bg */
+  background-color: rgba(
+    var(--watercolor-gray-overlay-rgb),
+    0.75
+  ); /* Using Watercolor Gray for overlay */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  color: var(--text-on-light-bg); /* Default heading color */
+}
+/* Specific heading accents could use Bamboo Teal */
+h2.tm-text-primary-bright,
+h2.tm-section-title-mb {
+  /* Headings in colored sections or with bright accent */
+  /* color: var(--bamboo-teal-accent); */ /* Option if charcoal feels too plain */
+}
+
+h1.tm-site-name {
+  color: var(--text-on-light-bg);
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+p {
+  line-height: 1.7;
+  font-family: var(--font-body);
+  color: var(--text-on-light-bg);
+}
+
+.text-white {
+  /* Used for text on Mountain Mist or dark overlays */
+  color: var(--text-on-dark-bg) !important;
+}
+.tm-text-white p,
+.tm-text-white i {
+  color: var(--text-on-dark-bg) !important;
+}
+
+.columns-bg {
+  background-image: linear-gradient(
+    to right,
+    var(--mountain-mist-green),
+    var(--mountain-mist-green) 50%,
+    var(--mist-white-bg) 50%
+  );
+}
+
+.container-fluid {
+  max-width: 1310px;
+}
+
+.tm-section-logo {
+  padding-top: 170px;
+  padding-bottom: 0;
+}
+
+.tm-section-logo-short {
+  padding-top: 100px;
+}
+
+/* ... (Keep structural padding/margin styles) ... */
+
+/* Color Overrides */
+.tm-bg-primary {
+  /* Not explicitly used, but if it was, it'd be Torii Red */
+  background-color: var(--torii-red-action);
+}
+
+.tm-text-primary {
+  /* Used for site name's subtitle, and copyright */
+  color: var(--text-on-light-bg);
+}
+h1.tm-text-primary {
+  color: var(--text-on-light-bg);
+}
+p.tm-text-primary.tm-site-description {
+  color: var(--text-on-light-bg);
+}
+footer p.tm-text-primary {
+  color: var(--bamboo-teal-accent); /* Copyright text color */
+}
+
+.tm-text-primary-bright {
+  /* Used for some headings, like "The Art of Connection" */
+  color: var(
+    --torii-red-action
+  ); /* Using Torii Red for this prominent heading */
+}
+
+.tm-hr-primary-bright {
+  border-color: var(--torii-red-action);
+}
+
+.tm-hr-white {
+  /* HR on dark/overlay backgrounds */
+  border-color: rgba(var(--mist-white-bg-rgb), 0.6);
+}
+
+.tm-text-secondary {
+  /* Used for small text under icon in section 4 */
+  color: var(--mountain-mist-green);
+}
+
+.tm-text-gray {
+  /* Used for main paragraph text - already set by body */
+  color: var(--text-on-light-bg);
+}
+
+.tm-icon-primary-color {
+  /* For section 2 icon on Mountain Mist background */
+  color: var(--text-on-dark-bg);
+}
+.tm-icon-accent-color {
+  /* For section 4 icon on Mist White background */
+  color: var(--bamboo-teal-accent);
+}
+
+.tm-site-name-container {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid var(--bamboo-teal-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tm-site-name-container-inner {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tm-site-name {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.tm-site-description {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+.tm-section-text-container {
+  padding: 0 50px;
+}
+.tm-section-text-container-8 {
+  padding: 64px 68px;
+}
+
+.tm-section-title-mb {
+  margin-bottom: 30px;
+}
+
+.grid figure img {
+  position: relative;
+  display: block;
+  min-height: 100%;
+  max-width: 100%;
+  opacity: 0.9;
+}
+
+.tm-contact-section {
+  font-size: 0.9rem;
+}
+
+.tm-contact-left {
+  /* Sits on Mist White background */
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: 0;
+  padding: 70px 45px 70px 70px;
+}
+
+.tm-contact-left,
+.tm-contact-form-container {
+  max-width: 450px;
+}
+
+.tm-contact-link {
+  color: var(--text-on-light-bg);
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.tm-contact-icon-container {
+  display: inline-block;
+  background-color: var(--bamboo-teal-accent);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+.tm-contact-icon-container .tm-contact-icon {
+  color: var(--mist-white-bg); /* Light icon on dark teal */
+}
+
+.tm-social-icon-container {
+  cursor: pointer;
+  width: 62px;
+  height: 62px;
+  background-color: var(--bamboo-teal-accent);
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.tm-social-icon-container i {
+  color: var(--mist-white-bg);
+}
+.tm-social-icon-container:hover {
+  background-color: var(--mountain-mist-green);
+}
+.tm-social-icon-container:hover i {
+  color: var(--gate-charcoal-text);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-control {
+  border-color: var(--border-subtle);
+  font-size: 0.9rem;
+  border-radius: 4px;
+  color: var(--text-on-light-bg);
+  background-color: var(--mist-white-bg);
+}
+.form-control::placeholder {
+  color: var(--mountain-mist-green);
+  opacity: 0.8;
+}
+.form-control:focus {
+  box-shadow: 0 0 0 2px rgba(var(--torii-red-action-rgb), 0.2);
+  border-color: var(--torii-red-action);
+}
+
+/* Button Styling */
+.btn {
+  padding: 12px 35px;
+  border-radius: 6px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(var(--gate-charcoal-text-rgb), 0.1);
+  border: 2px solid transparent;
+}
+
+.btn-primary,
+.tm-btn-submit {
+  background-color: var(--torii-red-action);
+  border-color: var(--torii-red-action);
+  color: var(--mist-white-bg); /* Light text on red */
+  overflow-x: hidden;
+}
+.btn-primary:hover,
+.tm-btn-submit:hover {
+  background-color: var(--torii-red-action-darker);
+  border-color: var(--torii-red-action-darker);
+  color: var(--mist-white-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(var(--gate-charcoal-text-rgb), 0.15);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid var(--bamboo-teal-accent); /* Using Bamboo Teal for secondary */
+  color: var(--bamboo-teal-accent);
+}
+.btn-secondary:hover {
+  background-color: var(--bamboo-teal-accent);
+  border-color: var(--bamboo-teal-accent);
+  color: var(--mist-white-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(var(--gate-charcoal-text-rgb), 0.15);
+}
+
+hr {
+  border-color: var(--border-subtle);
+}
+.tm-hr-mb {
+  margin-bottom: 46px;
+}
+.tm-p-mb {
+  margin-bottom: 45px;
+}
+
+/* Background Images - Choose images that fit an earthy, traditional, or zen Japanese theme */
+#bg_img_31 {
+  background-image: url(../img/bg_01.jpg); /* Placeholder */
+  height: 640px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#bg_img_32 {
+  background-image: url(../img/bg_02.jpg); /* Placeholder */
+  height: 640px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.tm-contact-icon-container-inner {
+  display: flex;
+  align-items: center; /* Vertical centering */
+  justify-content: center; /* Horizontal centering */
+  height: 100%;
+}
+
+.tm-social-icon-container-inner {
+  display: flex;
+  align-items: center; /* Vertical centering */
+  justify-content: center; /* Horizontal centering */
+  height: 100%;
+}
+
+.fas {
+  font-size: 1.2rem;
+  color: var(--mist-white-bg); /* Light icon on dark teal */
+}
+
+.fab {
+  font-size: 1.2rem;
+  color: var(--mist-white-bg); /* Light icon on dark teal */
+}
+
+.tm-section-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+/* Icon color for left column section (Mountain Mist background) */
+.tm-sm-bg-blue .tm-section-icon-container i.fa-yin-yang {
+  color: var(--text-on-dark-bg);
+}
+/* Icon color for right column section (Mist White background) */
+.tm-section-icon-container i.fa-brush {
+  color: var(--bamboo-teal-accent);
+}
+
+.fa-6x {
+  font-size: 5rem;
+}
+
+.tm-overlay-container {
+  position: relative;
+}
+.tm-text-overlay {
+  max-width: 498px;
+  width: 50%;
+  height: 100%;
+  margin-left: 50%;
+}
+/* Styling for text on image overlay (Watercolor Gray overlay) */
+.tm-text-overlay h2,
+.tm-text-overlay p {
+  color: var(
+    --gate-charcoal-text
+  ); /* Dark text for readability on light gray overlay */
+}
+/* Or if overlay is darker (e.g., using mountain mist as overlay bg) */
+/* .tm-text-overlay.darker-overlay h2,
+.tm-text-overlay.darker-overlay p {
+    color: var(--text-on-dark-bg);
+} */
+.tm-text-overlay .tm-hr-white {
+  /* This HR is on the overlay */
+  border-color: var(
+    --gate-charcoal-text
+  ); /* Or var(--bamboo-teal-accent) */
+}
+
+.tm-copyright-text {
+  font-size: 0.85rem;
+  padding: 60px 40px 55px 70px;
+}
+
+/* ... (keep tm-p-2, tm-p-3 section paddings) ... */
+
+/* RESPONSIVE STYLES */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (max-width: 1200px) {
+  /* ... (keep structural responsive styles) ... */
+  .tm-social-icon-container {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 991px) {
+  /* ... (keep existing structural responsive styles) ... */
+  .tm-section-text-container-2 {
+    margin: 0 auto;
+    background-color: rgba(var(--mist-white-bg-rgb), 0.9);
+  }
+  .tm-text-overlay {
+    /* Text overlay on mobile will cover whole image */
+    padding: 7%;
+    width: 100%;
+    margin-left: auto;
+    position: relative;
+    right: 0;
+    background-color: rgba(
+      var(--watercolor-gray-overlay-rgb),
+      0.85
+    ); /* Ensure readability */
+  }
+  .tm-text-overlay h2,
+  .tm-text-overlay p {
+    color: var(--gate-charcoal-text);
+  }
+  .tm-text-overlay .tm-hr-white {
+    border-color: var(--bamboo-teal-accent);
+  }
+}
+
+@media (max-width: 767px) {
+  .columns-bg {
+    background-image: none; /* Page BG becomes Mist White */
+  }
+
+  .tm-site-name-container {
+    /* Sits on what becomes Mountain Mist for #logo */
+    background-color: rgba(var(--mist-white-bg-rgb), 0.85);
+  }
+  .tm-site-name-container h1.tm-site-name,
+  .tm-site-name-container p.tm-site-description {
+    color: var(
+      --gate-charcoal-text
+    ); /* Ensure readability on its light bg */
+  }
+
+  .tm-section-logo {
+    padding-top: 3rem;
+  }
+
+  /* Sections that become --mountain-mist-green on mobile */
+  #logo,
+  .tm-section-image-container.tm-sm-bg-blue,
+  .col-sm-12.col-md-6.p-0.tm-sm-bg-blue,
+  #contact {
+    background-color: var(--mountain-mist-green);
+  }
+
+  /* Text color adjustments for --mountain-mist-green backgrounds on mobile */
+  .tm-section-image-container.tm-sm-bg-blue i,
+  .col-sm-12.col-md-6.p-0.tm-sm-bg-blue
+    .tm-section-text-container-8
+    h2,
+  .col-sm-12.col-md-6.p-0.tm-sm-bg-blue
+    .tm-section-text-container-8
+    p,
+  #contact .tm-contact-link,
+  #contact .tm-contact-link .media-body {
+    color: var(--text-on-dark-bg);
+  }
+
+  .col-sm-12.col-md-6.p-0.tm-sm-bg-blue
+    .tm-section-text-container-8
+    hr {
+    border-color: rgba(var(--mist-white-bg-rgb), 0.5);
+  }
+  /* Special case for heading color on mobile dark bg */
+  .col-sm-12.col-md-6.p-0.tm-sm-bg-blue
+    .tm-section-text-container-8
+    h2 {
+    color: var(
+      --text-on-dark-bg
+    ); /* Ensure heading is light on dark bg */
+  }
+
+  #contact .tm-bg-white-alpha {
+    /* Contact left part, now on Mountain Mist */
+    background-color: rgba(
+      var(--mist-white-bg-rgb),
+      0.1
+    ); /* Very subtle */
+  }
+  #contact .tm-contact-icon-container {
+    background-color: var(--bamboo-teal-accent);
+  }
+  #contact .tm-contact-icon-container i {
+    color: var(--mist-white-bg);
+  }
+
+  /* Outro text on mobile (default page bg: Mist White) */
+  #outro .tm-text-white p,
+  #outro .tm-text-white i {
+    color: var(--gate-charcoal-text);
+  }
+  #outro .tm-section-text-container-5 {
+    /* Ensure the specific container gets the right text color */
+    color: var(
+      --gate-charcoal-text
+    ) !important; /* Override .tm-text-white if needed */
+  }
+  #outro .tm-section-text-container-5 p,
+  #outro .tm-section-text-container-5 i {
+    color: var(--gate-charcoal-text) !important;
+  }
+  #outro .tm-social-icon-container {
+    background-color: var(--bamboo-teal-accent);
+  }
+  #outro .tm-social-icon-container i {
+    color: var(--mist-white-bg);
+  }
+
+  /* Mobile Form Styling (on Mountain Mist background in #contact) */
+  #contact .form-control {
+    background-color: transparent;
+    color: var(--text-on-dark-bg);
+    border-color: rgba(var(--mist-white-bg-rgb), 0.6);
+  }
+  #contact .form-control::placeholder {
+    color: var(--text-on-dark-bg);
+    opacity: 0.7;
+  }
+  #contact .form-control:focus {
+    border-color: var(--torii-red-action);
+    box-shadow: 0 0 0 2px rgba(var(--torii-red-action-rgb), 0.2);
+  }
+  #contact .tm-btn-submit {
+    background-color: var(--torii-red-action);
+    color: var(--mist-white-bg);
+    border-color: var(--torii-red-action);
+  }
+  #contact .tm-btn-submit:hover {
+    background-color: var(--torii-red-action-darker);
+    border-color: var(--torii-red-action-darker);
+  }
+
+  .tm-copyright-text {
+    background-color: rgba(var(--mist-white-bg-rgb), 0.8);
+    padding: 10px 10px 10px 0;
+    color: var(--bamboo-teal-accent);
+  }
+
+  .tm-sm-bg-blue {
+    /* Generic class for sections that become Mountain Mist on mobile */
+    background-color: var(--mountain-mist-green);
+  }
+  .tm-sm-bg-blue .tm-section-icon-container i {
+    color: var(--text-on-dark-bg);
+  }
+
+  .tm-section-icon-container {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  #bg_img_31 {
+    height: 400px;
+  }
+  #bg_img_32 {
+    height: 450px;
+  }
+}
+
+/* ... (keep other media queries for finer structural adjustments) ... */
