@@ -4,16 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Operator Incremetn and Decrement</title>
+    <title><?php echo "Contoh Increment Decrement"; ?></title>
 </head>
 
 <body>
 
     <?php
+
     $x = 4;
     $x++;
-    echo
-    $x . "<br>";
+    echo $x . "<br>";
+
     $x = 4;
     $x--;
     echo $x;
