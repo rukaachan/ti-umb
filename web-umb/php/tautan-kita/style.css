@@ -1,0 +1,340 @@
+/* === Root Variables (Palet Warna Utama) === */
+:root {
+  --pure-white: #fffeff;
+  --vibrant-blue: #326addff;
+  --vibrant-blue-hover: #2854b0ff;
+  --vibrant-pink: #fd3678ff;
+  --vibrant-pink-hover: #e42f68ff; /* Digunakan untuk tombol hapus */
+  --vibrant-orange: #ee672dff;
+  --vibrant-orange-hover: #d05821ff;
+  --dark-text: #2c3e50;
+  --light-gray-bg: #f4f6f8;
+  --border-color: #e0e0e0;
+  --card-hover-shadow: 0 10px 25px rgba(50, 106, 221, 0.15),
+    0 6px 10px rgba(50, 106, 221, 0.1);
+  --card-initial-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --danger-text: #c62828;
+}
+
+/* === Global & Typography (Font Nunito dari CDN) === */
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--light-gray-bg);
+  color: var(--dark-text);
+  font-weight: 400;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* === Navbar Styling === */
+.navbar-custom {
+  background-color: var(--vibrant-blue);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.navbar-brand {
+  font-weight: 800 !important;
+  color: var(--pure-white) !important;
+  font-size: 1.6rem !important;
+}
+.navbar-custom .btn-add {
+  background-color: var(--vibrant-orange);
+  border-color: var(--vibrant-orange);
+  color: var(--pure-white);
+  font-weight: 700;
+  transition: background-color 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease;
+  padding: 0.4rem 0.9rem;
+  border-radius: 0.3rem;
+}
+.navbar-custom .btn-add:hover {
+  background-color: var(--vibrant-orange-hover);
+  border-color: var(--vibrant-orange-hover);
+  transform: scale(1.05);
+}
+
+.page-header {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+/* === Card Styling (index.php) === */
+.card-bookmark {
+  background-color: var(--pure-white);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  box-shadow: var(--card-initial-shadow);
+  margin-bottom: 1.75rem;
+  transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+    border-top-color 0.35s ease;
+  position: relative;
+  overflow: hidden;
+  border-top: 4px solid transparent;
+}
+.card-bookmark:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: var(--card-hover-shadow);
+  border-top-color: var(--vibrant-blue);
+}
+.card-bookmark::before {
+  /* Shine effect */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 75%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0) 20%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  transform: skewX(-25deg);
+  transition: left 0.65s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 1;
+}
+.card-bookmark:hover::before {
+  left: 125%;
+}
+.card-bookmark .card-body {
+  padding: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+.bookmark-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--vibrant-blue);
+  margin-bottom: 0.3rem;
+  transition: color 0.3s ease;
+}
+.card-bookmark:hover .bookmark-title {
+  color: var(--vibrant-blue-hover);
+}
+.btn-action-group {
+  position: relative;
+  z-index: 3;
+}
+.btn-action {
+  margin-right: 0.6rem;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  padding: 0.45rem 0.9rem;
+  font-weight: 700;
+  border-radius: 0.3rem;
+  transition: all 0.25s ease-in-out;
+  border-width: 2px;
+}
+.btn-edit {
+  background-color: var(--pure-white);
+  border-color: var(--vibrant-blue);
+  color: var(--vibrant-blue);
+}
+.btn-edit:hover {
+  background-color: var(--vibrant-blue);
+  color: var(--pure-white);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.btn-delete {
+  background-color: var(--pure-white);
+  border-color: var(--vibrant-pink);
+  color: var(--vibrant-pink);
+}
+.btn-delete:hover {
+  background-color: var(--vibrant-pink);
+  color: var(--pure-white);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bookmark-category {
+  background-color: var(--vibrant-orange);
+  color: var(--pure-white);
+  font-weight: 600;
+  width: fit-content;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.4rem;
+  font-size: 0.85rem;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+}
+
+/* === Form Styling (create.php & edit.php) === */
+.container-form {
+  margin: 50px auto;
+  max-width: 750px;
+  padding-bottom: 3rem;
+}
+.card-form {
+  border: none;
+  border-radius: 0.8rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  background-color: var(--pure-white);
+  overflow: hidden;
+}
+.card-header-form {
+  color: var(--pure-white);
+  padding: 1.5rem 2rem;
+  border-bottom: none;
+}
+.card-header-form.create-header {
+  background: linear-gradient(
+    135deg,
+    var(--vibrant-blue) 0%,
+    var(--vibrant-blue-hover) 100%
+  );
+}
+.card-header-form.edit-header {
+  background: linear-gradient(
+    135deg,
+    var(--vibrant-orange) 0%,
+    var(--vibrant-orange-hover) 100%
+  );
+}
+.card-header-form h2 {
+  margin-bottom: 0;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+.card-form .card-body {
+  padding: 2rem;
+}
+.form-label {
+  font-weight: 600;
+  color: var(--dark-text);
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+/* Bootstrap .form-control akan mengambil alih, tapi kita bisa override jika perlu */
+.card-form .form-control:focus {
+  border-color: var(--vibrant-blue); /* Default fokus biru */
+  box-shadow: 0 0 0 0.25rem rgba(50, 106, 221, 0.2);
+}
+.edit-header + .card-body .form-control:focus {
+  /* Fokus oranye jika header edit */
+  border-color: var(--vibrant-orange);
+  box-shadow: 0 0 0 0.25rem rgba(238, 103, 45, 0.2);
+}
+.btn-submit-form {
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.4rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.btn-submit-form.create-btn {
+  background-color: var(--vibrant-blue);
+  border-color: var(--vibrant-blue);
+  color: var(--pure-white);
+}
+.btn-submit-form.create-btn:hover {
+  background-color: var(--vibrant-blue-hover);
+  border-color: var(--vibrant-blue-hover);
+  transform: translateY(-2px);
+}
+.btn-submit-form.edit-btn {
+  background-color: var(--vibrant-orange);
+  border-color: var(--vibrant-orange);
+  color: var(--pure-white);
+}
+.btn-submit-form.edit-btn:hover {
+  background-color: var(--vibrant-orange-hover);
+  border-color: var(--vibrant-orange-hover);
+  transform: translateY(-2px);
+}
+.btn-cancel-form {
+  /* Menggunakan kelas Bootstrap .btn-secondary */
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.4rem;
+  transition: transform 0.2s ease;
+}
+.btn-cancel-form:hover {
+  transform: translateY(-2px);
+}
+/* .is-invalid dan .invalid-feedback akan ditangani Bootstrap, bisa di-override jika perlu */
+.invalid-feedback {
+  color: var(--vibrant-pink) !important;
+  font-weight: 600 !important;
+}
+
+/* === Footer Styling === */
+footer {
+  background-color: var(--pure-white);
+  border-top: 1px solid var(--border-color);
+  padding: 2.5rem 0;
+  margin-top: 3.5rem;
+  text-align: center;
+  color: var(--dark-text);
+  opacity: 0.75;
+  font-size: 0.9rem;
+}
+.form-page footer {
+  margin-top: auto;
+}
+
+/* === SweetAlert2 Custom Styling === */
+.swal2-popup {
+  font-family: 'Nunito', sans-serif !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+  background-color: var(--pure-white) !important;
+}
+.swal2-title {
+  color: var(--dark-text) !important;
+  font-weight: 700 !important;
+  font-size: 1.5rem !important;
+}
+.swal2-html-container,
+.swal2-content {
+  color: var(--dark-text) !important;
+  opacity: 0.85;
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+}
+.swal2-confirm,
+.swal2-cancel,
+.swal2-deny {
+  border-radius: 0.4rem !important;
+  padding: 0.65rem 1.6rem !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  box-shadow: none !important;
+  transition: background-color 0.2s ease, transform 0.2s ease !important;
+}
+.swal2-confirm:hover,
+.swal2-cancel:hover,
+.swal2-deny:hover {
+  transform: translateY(-2px);
+}
+.swal2-confirm {
+  background-color: var(--vibrant-blue) !important;
+  color: var(
+    --pure-white
+  ) !important; /* Tambahkan warna teks untuk kontras */
+}
+.swal2-confirm:hover {
+  background-color: var(--vibrant-blue-hover) !important;
+}
+.swal2-cancel {
+  background-color: #6c757d !important; /* Bootstrap secondary */
+  color: var(
+    --pure-white
+  ) !important; /* Tambahkan warna teks untuk kontras */
+}
+.swal2-cancel:hover {
+  background-color: #5a6268 !important;
+}
+.swal2-icon.swal2-success .swal2-success-ring {
+  border-color: var(--vibrant-blue) !important;
+}
+.swal2-icon.swal2-success [class^='swal2-line'] {
+  background-color: var(--vibrant-blue) !important;
+}
+.swal2-icon.swal2-error [class^='swal2-x-mark-line'] {
+  background-color: var(--vibrant-pink) !important;
+}
+.swal2-icon.swal2-warning {
+  border-color: var(--vibrant-orange) !important;
+  color: var(--vibrant-orange) !important;
+}
