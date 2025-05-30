@@ -3,7 +3,7 @@
 define('DB_HOST_MYSQLI', 'localhost');
 define('DB_USER_MYSQLI', 'root');
 define('DB_PASS_MYSQLI', '');
-define('DB_NAME_MYSQLI', 'linkkeep_db');
+define('DB_NAME_MYSQLI', 'tautankita_db');
 
 $mysqli_linkkeep = new mysqli(DB_HOST_MYSQLI, DB_USER_MYSQLI, DB_PASS_MYSQLI, DB_NAME_MYSQLI);
 

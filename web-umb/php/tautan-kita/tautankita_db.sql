@@ -1,8 +1,8 @@
 -- Buat database jika belum ada
-CREATE DATABASE IF NOT EXISTS linkkeep_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE IF NOT EXISTS tautankita_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- Gunakan database
-USE linkkeep_db;
+USE tautankita_db;
 
 -- Buat tabel bookmarks
 CREATE TABLE IF NOT EXISTS bookmarks (
