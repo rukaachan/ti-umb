@@ -1,0 +1,44 @@
+[tool.briefcase]
+project_name = "TraceApp"
+bundle = "com.example"
+version = "0.1.0"
+url = "https://example.com/traceapp"
+license.file = "LICENSE"
+author = "Trace"
+author_email = "trace@example.com"
+
+[tool.briefcase.app.trace_app]
+formal_name = "TraceApp"
+description = "An application for tracking personal data including food history, expenses, wishlist, and travel history."
+icon = "src/trace_app/resources/trace_app"
+sources = ['src/trace_app']
+requires = [
+    'toga',
+]
+
+[tool.briefcase.app.trace_app.macOS]
+requires = [
+    'toga-cocoa',
+    'std-nslog',
+]
+
+[tool.briefcase.app.trace_app.linux]
+requires = [
+    'toga-gtk',
+]
+
+[tool.briefcase.app.trace_app.windows]
+requires = [
+    'toga-winforms',
+]
+
+# Mobile deployments
+[tool.briefcase.app.trace_app.iOS]
+requires = [
+    'toga-iOS',
+]
+
+[tool.briefcase.app.trace_app.android]
+requires = [
+    'toga-android',
+]
